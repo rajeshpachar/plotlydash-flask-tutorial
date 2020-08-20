@@ -25,9 +25,9 @@ def create_dashboard(server):
         default_title = path_names[len(path_names) -1]
         layout = layout_fun.get_layout()
         title = getattr(layout_fun, 'title', default_title)
-        auth_data = getattr(layout_fun, 'auth', {})
+        auth_data = getattr(layout_fun, 'auth_data', {})
 
-        register_dashapp(server, title, path, layout, register_fun, html_layout=index_html, auth_data= auth_data)
+        register_dashapp(server, title, path+'_dashboard', layout, register_fun, html_layout=index_html, auth_data= auth_data)
  
 def register_dashapp(app, title, base_pathname, layout, register_callbacks_fun, html_layout=None, auth_data={}):
     # Meta tags for viewport responsiveness
@@ -38,7 +38,7 @@ def register_dashapp(app, title, base_pathname, layout, register_callbacks_fun, 
                            url_base_pathname=f'/{base_pathname}/',
                            assets_folder=root_path + f'/{base_pathname}/assets/',
                            meta_tags=[meta_viewport])
-
+    auth_data.update({'basepath': base_pathname})
     BasicAuth(my_dashapp, auth_data, VALID_USERNAME_PASSWORD_PAIRS)
 
     # with app.app_context():

@@ -3,8 +3,11 @@ import dash_table
 import dash_html_components as html
 import dash_core_components as dcc
 from datasets.datamanager import DataManager
+from auth.constants import STATIC_KEY
 
 title = "MY Custom title"
+auth_data = {'type': STATIC_KEY, 'key': 'KHJOUIh2k34p9823u23432'}
+
 def get_layout():
     # Load DataFrame
     dataManager = DataManager()

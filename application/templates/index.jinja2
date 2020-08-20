@@ -5,16 +5,20 @@
   <img src="{{ url_for('static', filename='img/logo.png') }}" class="logo" />
   <h1 class="site-title">{{ title }}</h1>
   <p class="subtitle">Demo for embedding Plotly Dash within Flask Apps (View source on <a href="https://github.com/toddbirchard/plotlydash-flask-tutorial">Github</a>).</p>
-  <a href="/sample/dashapp1/" class="dash-link">
+  <a href="/sample/dashapp1_dashboard/" class="dash-link">
     <span>Embdedded Plotly Dash 1</span>
     <i class="fas fa-arrow-right"></i>
   </a>
-  <a href="/sample/dashapp2/" class="dash-link">
+  <a href="/sample/dashapp2_dashboard/" class="dash-link">
     <span>Embdedded Plotly Dash 2</span>
     <i class="fas fa-arrow-right"></i>
   </a>
-  <a href="/sample/stockticker/" class="dash-link">
-    <span>Embdedded Plotly Dash 3</span>
+  <a href="/sample/stockticker_dashboard/?key=23" class="dash-link">
+    <span>Embdedded Plotly Dash 3 - Auth Fail</span>
+    <i class="fas fa-arrow-right"></i>
+  </a>
+  <a href="/sample/stockticker_dashboard/?key=KHJOUIh2k34p9823u23432" class="dash-link">
+    <span>Embdedded Plotly Dash 3 - Auth Pass</span>
     <i class="fas fa-arrow-right"></i>
   </a>
 </div>

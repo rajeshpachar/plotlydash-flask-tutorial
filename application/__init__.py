@@ -18,9 +18,6 @@ def create_app():
 
         from plotlydash.dashboards import create_dashboard
         create_dashboard(app)
-        # Import Dash application
-        # from plotlydash.sample.stockticker import create_dashboard
-        # app = create_dashboard(app)
 
         # Compile static assets
         compile_static_assets(assets)
