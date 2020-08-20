@@ -4,7 +4,7 @@ import dash_html_components as html
 import dash_core_components as dcc
 from datasets.datamanager import DataManager
 
-def create_layout():
+def get_layout():
     # Load DataFrame
     dataManager = DataManager()
     df = dataManager.get_data('table_sample')
