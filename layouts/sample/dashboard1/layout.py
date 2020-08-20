@@ -1,33 +1,15 @@
 """Instantiate a Dash app."""
-import numpy as np
-import pandas as pd
-import dash
 import dash_table
 import dash_html_components as html
 import dash_core_components as dcc
-from .data import create_dataframe
-from .layout import html_layout
 
 
-def create_dashboard(server):
-    """Create a Plotly Dash dashboard."""
-    dash_app = dash.Dash(
-        server=server,
-        routes_pathname_prefix='/dashapp/',
-        external_stylesheets=[
-            '/static/dist/css/styles.css',
-            'https://fonts.googleapis.com/css?family=Lato'
-        ]
-    )
-
+def create_layout(df):
     # Load DataFrame
-    df = create_dataframe()
-
-    # Custom HTML layout
-    dash_app.index_string = html_layout
+    # df = create_dataframe()
 
     # Create Layout
-    dash_app.layout = html.Div(
+    layout = html.Div(
         children=[dcc.Graph(
             id='histogram-graph',
             figure={
@@ -48,8 +30,7 @@ def create_dashboard(server):
         ],
         id='dash-container'
     )
-    return dash_app.server
-
+    return layout
 
 def create_data_table(df):
     """Create Dash datatable from Pandas DataFrame."""
