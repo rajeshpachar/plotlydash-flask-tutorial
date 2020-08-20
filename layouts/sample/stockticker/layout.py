@@ -4,6 +4,7 @@ import dash_html_components as html
 import dash_core_components as dcc
 from datasets.datamanager import DataManager
 
+title = "MY Custom title"
 def get_layout():
     # Load DataFrame
     dataManager = DataManager()

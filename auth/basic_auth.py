@@ -4,8 +4,9 @@ import flask
 
 
 class BasicAuth(Auth):
-    def __init__(self, app, username_password_list):
+    def __init__(self, app, auth_data, username_password_list):
         Auth.__init__(self, app)
+        self.auth_data = auth_data
         self._users = username_password_list \
             if isinstance(username_password_list, dict) \
             else {k: v for k, v in username_password_list}
