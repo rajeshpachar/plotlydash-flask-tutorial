@@ -15,3 +15,8 @@ def home():
         template='home-template',
         body="This is a homepage served with Flask."
     )
+
+@server_bp.route('/healthcheck')
+def mycheckup():
+    """Landing page."""
+    return "i am good"
