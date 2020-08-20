@@ -1,9 +1,11 @@
 """Routes for parent Flask app."""
 from flask import render_template
 from flask import current_app as app
+from flask import Blueprint
 
+server_bp = Blueprint('main', __name__)
 
-@app.route('/')
+@server_bp.route('/')
 def home():
     """Landing page."""
     return render_template(

@@ -2,11 +2,12 @@
 import dash_table
 import dash_html_components as html
 import dash_core_components as dcc
+from datasets.datamanager import DataManager
 
-
-def create_layout(df):
+def create_layout():
     # Load DataFrame
-    # df = create_dataframe()
+    dataManager = DataManager()
+    df = dataManager.get_data('table_sample')
 
     # Create Layout
     layout = html.Div(

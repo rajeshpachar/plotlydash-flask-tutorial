@@ -1,4 +1,5 @@
 """Initialize Flask app."""
+import dash
 from flask import Flask
 from flask_assets import Environment
 
@@ -12,14 +13,26 @@ def create_app():
 
     with app.app_context():
         # Import parts of our core Flask app
-        from . import routes
+        # from . import routes
         from .assets import compile_static_assets
 
+        from plotlydash.dashboards import create_dashboard
+        create_dashboard(app)
         # Import Dash application
-        from plotlydash.sample.dashboard1 import create_dashboard
-        app = create_dashboard(app)
+        # from plotlydash.sample.stockticker import create_dashboard
+        # app = create_dashboard(app)
 
         # Compile static assets
         compile_static_assets(assets)
 
-        return app
+    register_blueprints(app)
+
+    return app
+
+
+
+def register_blueprints(server):
+    from application.routes import server_bp
+
+    server.register_blueprint(server_bp)
+
