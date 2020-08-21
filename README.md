@@ -70,3 +70,19 @@ Replace the values in **.env.example** with your values and rename this file to 
 -----
 
 **Hackers and Slackers** tutorials are free of charge. If you found this tutorial helpful, a [small donation](https://www.buymeacoffee.com/hackersslackers) would be greatly appreciated to keep us in business. All proceeds go towards coffee, and all coffee goes towards more content.
+
+https://pipenv-fork.readthedocs.io/en/latest/basics.html#:~:text=%24%20pipenv%20install%20is%20used%20for,environment%20and%20updating%20your%20Pipfile.&text=The%20user%20can%20provide%20these,using%20the%20system%20python2%20link.
+
+
+https://www.toptal.com/flask/flask-production-recipes
+
+docker build . -t flask_image
+
+
+https://iximiuz.com/en/posts/save-the-day-with-gevent/#solving-problem-with-zero-lines-of-code
+
+https://iximiuz.com/en/posts/flask-gevent-tutorial/
+
+
+https://pythonspeed.com/articles/alpine-docker-python/
+
